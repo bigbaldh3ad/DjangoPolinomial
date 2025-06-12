@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Métodos Numéricos</title>
+    <link rel="stylesheet" href="{% static 'metodos/styles.css' %}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Métodos Numéricos</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="input_data">Introduce puntos o valores:</label>
+            <textarea id="input_data" name="input_data" rows="5" cols="40">{{ request.POST.input_data }}</textarea>
+
+            <label for="metodo">Selecciona método:</label>
+            <select name="metodo" id="metodo">
+                <option value="interpolacion_newton">Interpolación de Newton</option>
+                <option value="diferenciacion_finita">Diferenciación Finita</option>
+            </select>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if resultado %}
+            <h2>Resultado</h2>
+            <div class="resultado"><pre>{{ resultado }}</pre></div>
+        {% endif %}
+
+        {% if grafica_url %}
+            <h2>Gráfica</h2>
+            <img src="{{ grafica_url }}" alt="Gráfica" class="grafica" />
+        {% endif %}
+    </div>
+</body>
+</html>

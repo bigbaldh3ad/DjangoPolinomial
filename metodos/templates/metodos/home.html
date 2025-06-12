@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio | Métodos Numéricos</title>
+    <link rel="stylesheet" href="{% static 'metodos/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a la Aplicación de Métodos Numéricos</h1>
+        <p>Explora métodos como interpolación de Newton y diferenciación finita.</p>
+        <a href="{% url 'metodos:index' %}" class="button-link">Ir a los Métodos</a>
+    </div>
+</body>
+</html>

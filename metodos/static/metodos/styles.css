@@ -1,0 +1,139 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo y body */
+body {
+  background: linear-gradient(135deg, #1400c6 0%, #657a00 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+/* Contenedor central (la calculadora) */
+.container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  text-align: center;
+}
+
+/* Títulos */
+h1 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #cae200; /* verde brillante */
+  text-shadow: 1px 1px 4px #0008;
+}
+
+/* Formulario */
+form label {
+  display: block;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: #cae200;
+  text-align: left;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #cae200;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  color: #1400c6;
+  font-weight: 600;
+  resize: vertical;
+  background: #fff;
+}
+
+textarea:focus, select:focus {
+  outline: none;
+  border-color: #ff0028; /* rojo eléctrico */
+  box-shadow: 0 0 8px #ff0028aa;
+}
+
+/* Botones */
+.button-link, button[type="submit"] {
+  display: inline-block;
+  background-color: #cae200; /* verde brillante */
+  color: #1400c6; /* azul poderoso */
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.8rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 220px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px #0008;
+}
+
+.button-link:hover, button[type="submit"]:hover {
+  background-color: #ff0028; /* rojo eléctrico */
+  color: #fff;
+  box-shadow: 0 6px 16px #ff0028cc;
+}
+
+/* Resultado y gráfico */
+.resultado {
+  margin-top: 1.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-weight: 600;
+  color: #cae200;
+  min-height: 3rem;
+  user-select: text;
+  box-shadow: 0 3px 8px #0007 inset;
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+}
+
+
+img.grafica {
+  margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+img.grafica:hover {
+  transform: scale(1.02);
+}
+
+/* Pequeñas animaciones y detalles */
+textarea, select, button {
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .container {
+    padding: 1.5rem 1.5rem;
+  }
+
+  button[type="submit"], .button-link {
+    max-width: 100%;
+  }
+}
